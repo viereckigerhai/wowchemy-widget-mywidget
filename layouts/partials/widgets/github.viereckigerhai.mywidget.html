@@ -16,7 +16,7 @@
           
           {{- $image := ($section.Parent.Resources.ByType "image").GetMatch $section.Params.image -}}
           {{- if not $image -}}
-             <p> no image specified </p>
+             {{- $image = resources.Get (path.Join "media" $page.Params.image) -}}
           {{- end -}}
           {{ if $image }}
              <p>image = {{ $image }}</p>
