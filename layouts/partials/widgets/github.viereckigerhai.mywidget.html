@@ -18,7 +18,7 @@
             {{ with $resource }}
             {{ $image := .Resize "540x webp" }}
             <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-                alt="{{ $item.Title }}" loading="lazy">
+                alt="{{ $section.Title }}" loading="lazy">
             {{end}}
         </div>
 
