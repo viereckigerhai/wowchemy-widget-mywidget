@@ -14,12 +14,8 @@
 
         <div class="col-12 col-md-6 order-first order-md-2">
 
-            {{ $resource := ($page.Parent.Resources.ByType "image").GetMatch $page.Params.image }}
-            {{ with $resource }}
-            {{ $image := .Resize "540x webp" }}
-            <img src="{{ $image.RelPermalink }}" height="{{ $image.Height }}" width="{{ $image.Width }}"
-                alt="{{ $section.Title }}" loading="lazy">
-            {{end}}
+          <p>{{$section.image}}</p>
+            
         </div>
 
     </div>
