@@ -14,10 +14,12 @@
 
         <div class="col-12 col-md-6 order-first order-md-2">
           
-          {{ if $section.Params.image }}
-             <p>image = {{ $section.Params.image }}</p>
-          {{ else }}
+          {{- $image := ($section.Parent.Resources.ByType "image").GetMatch $section.Params.image -}}
+          {{- if not $image -}}
              <p> no image specified </p>
+          {{- end -}}
+          {{ if $image }}
+             <p>image = {{ $image }}</p>
           {{ end }}
 
         </div>
