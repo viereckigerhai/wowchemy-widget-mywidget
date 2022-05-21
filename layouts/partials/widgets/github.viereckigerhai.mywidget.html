@@ -21,6 +21,12 @@
           {{- end -}}
           {{ if $image }}
              <p>image = {{ $image }}</p>
+             {{ with $image }}
+             {{ $img := .Resize "540x webp" }}
+                <img src="{{ $img.RelPermalink }}" height="{{ $img.Height }}" width="{{ $img.Width }}"
+                   alt="{{ $page.Title }}" loading="lazy">
+      
+             {{end}}
           {{ end }}
 
         </div>
