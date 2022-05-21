@@ -9,7 +9,6 @@
           <h2>{{$page.Title}}</h2>
           <h3>{{$page.Params.subtitle}}</h3>
           <p>{{$page.Content}}</p>
-          <p>{{$page.Params.image}}</p>
 
         </div>
 
@@ -20,7 +19,6 @@
              {{- $image = resources.Get (path.Join "media" $page.Params.image) -}}
           {{- end -}}
           {{ if $image }}
-             <p>image = {{ $image }}</p>
              {{ with $image }}
              {{ $img := .Resize "540x webp" }}
                 <img src="{{ $img.RelPermalink }}" height="{{ $img.Height }}" width="{{ $img.Width }}"
